@@ -1,29 +1,13 @@
 import streamlit as st
 
-# Display an image (replace with your actual image file name or URL)
-st.image("CCD09636.JPG", caption="Welcome Home Image", use_column_width=True)
+st.set_page_config(page_title="Simple Streamlit App", layout="centered")
 
-# Titles and Text
-st.title("Welcome to the Streamlit App!")
-st.header("This is a simple Streamlit application.")
-st.subheader("Explore the features and functionalities.")
-st.info("This app is designed to demonstrate the basic usage of Streamlit.")
-st.write("Feel free to modify and enhance it as per your requirements.")
+st.title("📘 Welcome to My Streamlit App")
+st.header("Simple Form Example")
+st.write("This is a basic example of using Streamlit in Python.")
 
-# Displaying a range
-st.write(list(range(50)))
+name = st.text_input("Enter your name")
+age = st.number_input("Enter your age", min_value=1, max_value=120, step=1)
 
-# Additional text content
-st.markdown("**samrudh**")
-st.text("my college is christ")
-
-# Caption already given above
-st.caption("This is a caption for the image above.")
-
-# Add a button
-if st.button("Click Me"):
-    st.success("You clicked the button!")
-
-# Optional footer
-st.markdown("---")
-st.markdown("Made with  using Streamlit")
+if st.button("Submit"):
+    st.success(f"Hello {name}, you are {age} years old!")
